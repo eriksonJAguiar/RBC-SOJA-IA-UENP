@@ -72,8 +72,8 @@ namespace SojaApp.DAO
         {
             try
             {
-                var q = Query.EQ("atributo", t.atributo);
-                var result = coll.FindOne<Caso>(q);
+                var q = Query.EQ("caso", t.caso);
+                var result = coll.FindOne(q);
 
                 return result;
             }

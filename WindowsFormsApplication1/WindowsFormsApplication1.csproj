@@ -71,12 +71,14 @@
     <Compile Include="Control\CGetAtrib.cs" />
     <Compile Include="Control\CGetCaso.cs" />
     <Compile Include="Control\Cmain.cs" />
+    <Compile Include="Control\CTrasformarNum.cs" />
     <Compile Include="DAO\CNovoCaso.cs" />
     <Compile Include="DAO\DaoAtributo.cs" />
     <Compile Include="DAO\DaoCaso.cs" />
     <Compile Include="DAO\DaoDoenca.cs" />
     <Compile Include="DAO\DaoPeso.cs" />
     <Compile Include="DAO\GenericDao.cs" />
+    <Compile Include="Model\CasoNum.cs" />
     <Compile Include="Model\CasoSingleton.cs" />
     <Compile Include="view\Form1.cs">
       <SubType>Form</SubType>
@@ -102,6 +104,12 @@
     <Compile Include="view\SelecionaAtributos.Designer.cs">
       <DependentUpon>SelecionaAtributos.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\SelecionarCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\SelecionarCaso.Designer.cs">
+      <DependentUpon>SelecionarCaso.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\TelaFinal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,9 +130,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="view\SelecionaAtributos.resx">
       <DependentUpon>SelecionaAtributos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\SelecionarCaso.resx">
+      <DependentUpon>SelecionarCaso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\TelaFinal.resx">
       <DependentUpon>TelaFinal.cs</DependentUpon>
@@ -144,6 +156,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\folha_g.png" />
     <Content Include="img\folha_grande.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

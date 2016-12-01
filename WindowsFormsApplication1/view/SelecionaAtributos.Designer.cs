@@ -899,6 +899,8 @@
             this.Controls.Add(this.Canker_Lesion);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.Area_Damaged);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SelecionaAtributos";
             this.Text = "SelecionaAtributos";
             this.Load += new System.EventHandler(this.SelecionaAtributos_Load);

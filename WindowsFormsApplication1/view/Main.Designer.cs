@@ -38,9 +38,9 @@
             // btnNovaConsulta
             // 
             this.btnNovaConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovaConsulta.Location = new System.Drawing.Point(112, 180);
+            this.btnNovaConsulta.Location = new System.Drawing.Point(52, 287);
             this.btnNovaConsulta.Name = "btnNovaConsulta";
-            this.btnNovaConsulta.Size = new System.Drawing.Size(120, 34);
+            this.btnNovaConsulta.Size = new System.Drawing.Size(236, 41);
             this.btnNovaConsulta.TabIndex = 0;
             this.btnNovaConsulta.Text = "Nova Consulta";
             this.btnNovaConsulta.UseVisualStyleBackColor = true;
@@ -49,9 +49,9 @@
             // btnSobre
             // 
             this.btnSobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSobre.Location = new System.Drawing.Point(112, 240);
+            this.btnSobre.Location = new System.Drawing.Point(52, 360);
             this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(120, 32);
+            this.btnSobre.Size = new System.Drawing.Size(236, 36);
             this.btnSobre.TabIndex = 1;
             this.btnSobre.Text = "Sobre";
             this.btnSobre.UseVisualStyleBackColor = true;
@@ -59,31 +59,33 @@
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(112, 301);
+            this.btnSair.Location = new System.Drawing.Point(52, 424);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(120, 31);
+            this.btnSair.Size = new System.Drawing.Size(236, 37);
             this.btnSair.TabIndex = 2;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(47, 13);
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.folha_g;
+            this.pictureBox1.Location = new System.Drawing.Point(52, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(246, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(236, 255);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.UseWaitCursor = true;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 363);
+            this.ClientSize = new System.Drawing.Size(329, 491);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnSobre);
             this.Controls.Add(this.btnNovaConsulta);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "Consulta Soja";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -93,9 +95,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnNovaConsulta;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnSobre;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

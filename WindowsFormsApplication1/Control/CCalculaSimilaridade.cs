@@ -71,8 +71,6 @@ namespace WindowsFormsApplication1.Control
                         similaridades.Add(valCaso[i].Name, similaridadeLocal);
                     }
 
-                    
-
                 }
 
                 sl.Add(c.caso, similaridades);
@@ -115,7 +113,7 @@ namespace WindowsFormsApplication1.Control
 
                 for(int i=3;i <= 37; i++)
                 {
-                    c.SimilaridadeGlobal += (Convert.ToDouble(t[valAtb[i].Name].ToString())) * (Convert.ToDouble(pesos[valAtb[i].Name].ToString()));
+                    c.SimilaridadeGlobal += (Convert.ToDouble(t[valAtb[i].Name].ToString())) * (Convert.ToDouble(pesos[valAtb[i].Name.Replace('_','-')].ToString()));
                     c.SimilaridadeGlobal = c.SimilaridadeGlobal / div;
                 }
 
@@ -202,6 +200,7 @@ namespace WindowsFormsApplication1.Control
             return table;
 
         }
+
 
         private List<Caso> selecionaMelhores(List<Caso> casos)
         {

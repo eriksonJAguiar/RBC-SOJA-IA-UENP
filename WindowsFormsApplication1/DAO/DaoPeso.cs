@@ -94,7 +94,7 @@ namespace SojaApp.DAO
         {
             try
             {
-                var result = coll.FindAllAs<Peso>();
+                MongoCursor<Peso> result = coll.FindAll();
 
                 List<Peso> lPeso = new List<Peso>();
 
@@ -116,6 +116,7 @@ namespace SojaApp.DAO
                 server.Disconnect();
             }
         }
+
         public Peso searchOther(Peso t)
         {
 

@@ -41,7 +41,7 @@ namespace TelasIA
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 form = new Form1();
+            CasoSelecionado form = new CasoSelecionado();
 
 
         }

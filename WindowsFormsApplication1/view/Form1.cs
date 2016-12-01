@@ -15,9 +15,9 @@ using WindowsFormsApplication1.view;
 
 namespace TelasIA
 {
-    public partial class Form1 : Form
+    public partial class CasoSelecionado : Form
     {
-        public Form1()
+        public CasoSelecionado()
         {
             InitializeComponent();
         }
@@ -28,14 +28,12 @@ namespace TelasIA
 
             CasoSingleton caso = CasoSingleton.getInstance();
 
-           List<Caso> casos_calculados = c.CCalculaSimilaridadeGeral(caso);
+            List<Caso> casos_calculados = c.CCalculaSimilaridadeGeral(caso);
 
             PropertyInfo[] valAtb = caso.GetType().GetProperties();
 
             listCasoInserido.Items[0].Text = valAtb[0].Name;
             listCasoInserido.Items[1].Text = valAtb[0].GetValue(caso).ToString();
-
-
         }
 
         private void btn_avançar_Click(object sender, EventArgs e)

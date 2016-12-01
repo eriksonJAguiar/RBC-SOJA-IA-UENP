@@ -1,6 +1,6 @@
 ﻿namespace TelasIA
 {
-    partial class Form1
+    partial class CasoSelecionado
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -32,18 +32,17 @@
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listCasoInserido = new System.Windows.Forms.ListView();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.GridViewCasoscomSimilaridade = new System.Windows.Forms.DataGridView();
-            this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
-            this.btn_Voltar = new System.Windows.Forms.Button();
-            this.btn_fechar = new System.Windows.Forms.Button();
-            this.btn_avançar = new System.Windows.Forms.Button();
             this.Atributo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.GridViewCasoscomSimilaridade = new System.Windows.Forms.DataGridView();
             this.Caso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doenca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.similaridade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Selecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btn_Voltar = new System.Windows.Forms.Button();
+            this.btn_fechar = new System.Windows.Forms.Button();
+            this.btn_avançar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCasoscomSimilaridade)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,18 +82,37 @@
             this.doenca,
             this.similaridade,
             this.Selecionar});
-            this.GridViewCasoscomSimilaridade.Location = new System.Drawing.Point(12, 263);
+            this.GridViewCasoscomSimilaridade.Location = new System.Drawing.Point(127, 251);
             this.GridViewCasoscomSimilaridade.Name = "GridViewCasoscomSimilaridade";
             this.GridViewCasoscomSimilaridade.ReadOnly = true;
-            this.GridViewCasoscomSimilaridade.Size = new System.Drawing.Size(677, 150);
+            this.GridViewCasoscomSimilaridade.Size = new System.Drawing.Size(445, 150);
             this.GridViewCasoscomSimilaridade.TabIndex = 2;
             // 
-            // vScrollBar2
+            // Caso
             // 
-            this.vScrollBar2.Location = new System.Drawing.Point(669, 263);
-            this.vScrollBar2.Name = "vScrollBar2";
-            this.vScrollBar2.Size = new System.Drawing.Size(20, 150);
-            this.vScrollBar2.TabIndex = 3;
+            this.Caso.HeaderText = "Caso";
+            this.Caso.Name = "Caso";
+            this.Caso.ReadOnly = true;
+            // 
+            // doenca
+            // 
+            this.doenca.HeaderText = "Doenca";
+            this.doenca.Name = "doenca";
+            this.doenca.ReadOnly = true;
+            // 
+            // similaridade
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.similaridade.DefaultCellStyle = dataGridViewCellStyle1;
+            this.similaridade.HeaderText = "Similaridade";
+            this.similaridade.Name = "similaridade";
+            this.similaridade.ReadOnly = true;
+            // 
+            // Selecionar
+            // 
+            this.Selecionar.HeaderText = "Selecionar";
+            this.Selecionar.Name = "Selecionar";
+            this.Selecionar.ReadOnly = true;
             // 
             // btn_Voltar
             // 
@@ -129,33 +147,7 @@
             this.btn_avançar.UseVisualStyleBackColor = true;
             this.btn_avançar.Click += new System.EventHandler(this.btn_avançar_Click);
             // 
-            // Caso
-            // 
-            this.Caso.HeaderText = "Caso";
-            this.Caso.Name = "Caso";
-            this.Caso.ReadOnly = true;
-            // 
-            // doenca
-            // 
-            this.doenca.HeaderText = "Doenca";
-            this.doenca.Name = "doenca";
-            this.doenca.ReadOnly = true;
-            // 
-            // similaridade
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.similaridade.DefaultCellStyle = dataGridViewCellStyle1;
-            this.similaridade.HeaderText = "Similaridade";
-            this.similaridade.Name = "similaridade";
-            this.similaridade.ReadOnly = true;
-            // 
-            // Selecionar
-            // 
-            this.Selecionar.HeaderText = "Selecionar";
-            this.Selecionar.Name = "Selecionar";
-            this.Selecionar.ReadOnly = true;
-            // 
-            // Form1
+            // CasoSelecionado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,12 +156,11 @@
             this.Controls.Add(this.btn_avançar);
             this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.btn_Voltar);
-            this.Controls.Add(this.vScrollBar2);
             this.Controls.Add(this.GridViewCasoscomSimilaridade);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.listCasoInserido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Name = "CasoSelecionado";
             this.Text = "CasoSelecionado";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCasoscomSimilaridade)).EndInit();
@@ -182,7 +173,6 @@
         private System.Windows.Forms.ListView listCasoInserido;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.DataGridView GridViewCasoscomSimilaridade;
-        private System.Windows.Forms.VScrollBar vScrollBar2;
         private System.Windows.Forms.Button btn_Voltar;
         private System.Windows.Forms.Button btn_fechar;
         private System.Windows.Forms.Button btn_avançar;

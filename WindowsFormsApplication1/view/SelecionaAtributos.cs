@@ -179,9 +179,22 @@ namespace WindowsFormsApplication1.view
             casosSel.stem_cankers = Stem_Cankers.Text;
             casosSel.temp = Temp.Text;
 
-            this.Hide();
-            Form1 form = new Form1();
-            form.Show();
+            CCalculaSimilaridade c = new CCalculaSimilaridade();
+
+            CasoSingleton caso = CasoSingleton.getInstance();
+
+            List<Caso> casos_calculados = c.CCalculaSimilaridadeGeral(caso);
+
+
+            MessageBox.Show(casos_calculados[0].SimilaridadeGlobal.ToString());
+
+            
+
+
+            //this.Hide();
+
+            // tela2 = new SelecionarCaso();
+            //tela2.Show();
 
         }
     }

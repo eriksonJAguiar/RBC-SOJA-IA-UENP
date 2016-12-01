@@ -158,6 +158,7 @@
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TelaFinal";
             this.Text = "TelaFinal";
             this.ResumeLayout(false);
