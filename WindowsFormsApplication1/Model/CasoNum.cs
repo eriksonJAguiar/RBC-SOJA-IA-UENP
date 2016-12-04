@@ -8,6 +8,7 @@ namespace WindowsFormsApplication1.Model
 {
     class CasoNum
     {
+
         public int caso { get; set; }
 
         public int doenca { get; set; }

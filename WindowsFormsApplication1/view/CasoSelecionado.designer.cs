@@ -34,7 +34,6 @@
             this.listCasoInserido = new System.Windows.Forms.ListView();
             this.Atributo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.GridViewCasoscomSimilaridade = new System.Windows.Forms.DataGridView();
             this.Caso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doenca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,13 +63,6 @@
             this.listCasoInserido.Size = new System.Drawing.Size(676, 232);
             this.listCasoInserido.TabIndex = 0;
             this.listCasoInserido.UseCompatibleStateImageBehavior = false;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(671, 13);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(18, 232);
-            this.vScrollBar1.TabIndex = 1;
             // 
             // GridViewCasoscomSimilaridade
             // 
@@ -157,7 +149,6 @@
             this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.GridViewCasoscomSimilaridade);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.listCasoInserido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CasoSelecionado";
@@ -171,7 +162,6 @@
         #endregion
 
         private System.Windows.Forms.ListView listCasoInserido;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.DataGridView GridViewCasoscomSimilaridade;
         private System.Windows.Forms.Button btn_Voltar;
         private System.Windows.Forms.Button btn_fechar;

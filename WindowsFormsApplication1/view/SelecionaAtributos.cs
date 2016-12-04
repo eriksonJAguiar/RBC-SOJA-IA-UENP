@@ -77,7 +77,7 @@ namespace WindowsFormsApplication1.view
             Leafspots_Halo.Items.AddRange(leafspots_halo.ToArray());
 
 
-            List<String> leafspot_size = (List<String>)table["leafspots-size"];
+            List<String> leafspot_size = (List<String>)table["leafspot-size"];
             Leafspot_Size.Items.AddRange(leafspot_size.ToArray());
 
             List<String> leafspots_marg = (List<String>)table["leafspots-marg"];
@@ -157,7 +157,7 @@ namespace WindowsFormsApplication1.view
             casosSel.leaf_shread = Leaf_Shared.Text;
             casosSel.leafspots_halo = Leafspots_Halo.Text;
             casosSel.leafspots_marg = Leafspot_Marg.Text;
-            casosSel.leafspots_size = Leafspot_Size.Text;
+            casosSel.leafspot_size = Leafspot_Size.Text;
             casosSel.leaf_malf = Leaf_Malf.Text;
             casosSel.leaf_mild = Leaf_Mild.Text;
             casosSel.leaves = Leaves.Text;
@@ -178,23 +178,12 @@ namespace WindowsFormsApplication1.view
             casosSel.stem = Stem.Text;
             casosSel.stem_cankers = Stem_Cankers.Text;
             casosSel.temp = Temp.Text;
-
-            CCalculaSimilaridade c = new CCalculaSimilaridade();
-
-            CasoSingleton caso = CasoSingleton.getInstance();
-
-            List<Caso> casos_calculados = c.CCalculaSimilaridadeGeral(caso);
-
-
-            MessageBox.Show(casos_calculados[0].SimilaridadeGlobal.ToString());
-
             
 
 
-            //this.Hide();
-
-            // tela2 = new SelecionarCaso();
-            //tela2.Show();
+            this.Hide();
+            CasoSelecionado cs = new CasoSelecionado();
+            cs.Show();           
 
         }
     }

@@ -66,7 +66,7 @@ namespace SojaApp.Model
         public String leafspots_halo { get; set; }
 
         [BsonElement("leafspot_size")]
-        public String leafspots_size { get; set; }
+        public String leafspot_size { get; set; }
 
         [BsonElement("leafspots_marg")]
         public String leafspots_marg { get; set; }

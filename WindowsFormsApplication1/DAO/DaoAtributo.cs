@@ -140,5 +140,28 @@ namespace SojaApp.DAO
             }
 
         }
+        public Atributo searchOther(String t)
+        {
+
+            try
+            {
+                String at = t.Replace("_", "-");
+                var q = Query.EQ("atributo", at);
+                MongoCursor<Atributo> result = coll.Find(q);
+
+                return result.First();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+
+                return null;
+            }
+            finally
+            {
+                server.Disconnect();
+            }
+
+        }
     }
 }

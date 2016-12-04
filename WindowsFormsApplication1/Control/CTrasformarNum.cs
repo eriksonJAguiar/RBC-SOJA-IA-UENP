@@ -1,7 +1,10 @@
-﻿using System;
+﻿using SojaApp.DAO;
+using SojaApp.Model;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApplication1.Model;
@@ -10,27 +13,35 @@ namespace WindowsFormsApplication1.Control
 {
     class  CTrasformarNum
     {
-        public List<CasoNum> trasnformar(Hashtable i)
+        public List<CasoNum> trasnformar(List<Caso> casos)
         {
-            
+            DaoAtributo atb_dao = new DaoAtributo();
+
+            PropertyInfo[] valAtb = casos.GetType().GetProperties();
+
             List<CasoNum> cs = new List<CasoNum>();
 
-            foreach(String[] v in i.Values)
+            List<Atributo> at = atb_dao.getAll();
+
+            foreach(Caso c in casos)
             {
-                for(int j = 0;j < v.Length; j++)
-                {
-                       
-                }
+                
+               
             }
+            return null;
+           
+        }
+        public List<CasoNum> trasnformar(Caso caso)
+        {
 
-            return cs;
 
+            return null;
 
         }
-        
 
 
-            
-        
+
+
+
     }
 }

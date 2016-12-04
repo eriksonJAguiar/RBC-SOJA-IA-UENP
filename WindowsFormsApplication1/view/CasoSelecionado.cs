@@ -1,4 +1,5 @@
-﻿using SojaApp.Model;
+﻿using SojaApp.DAO;
+using SojaApp.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,12 +29,25 @@ namespace TelasIA
 
             CasoSingleton caso = CasoSingleton.getInstance();
 
-            List<Caso> casos_calculados = c.CCalculaSimilaridadeGeral(caso);
+            List<Caso> casos_calculados = c.calculaSimilaridadeLocal(caso);
 
-            PropertyInfo[] valAtb = caso.GetType().GetProperties();
+            //PropertyInfo[] valAtb = caso.GetType().GetProperties();
 
-            listCasoInserido.Items[0].Text = valAtb[0].Name;
-            listCasoInserido.Items[1].Text = valAtb[0].GetValue(caso).ToString();
+
+            //listCasoInserido.Columns.Add("teste", caso.area_damaged);
+
+
+            /*DaoCaso dao = new DaoCaso();
+
+            List<Caso> casos = dao.getAll();
+
+            for(int i = 0; i < casos.Count; i++)
+            {
+
+            }*/
+
+            //Atributo.Text = valAtb[1].ToString();
+            //Valor.Text = caso.area_damaged;
         }
 
         private void btn_avançar_Click(object sender, EventArgs e)

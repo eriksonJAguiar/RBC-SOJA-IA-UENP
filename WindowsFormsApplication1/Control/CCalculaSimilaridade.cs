@@ -12,74 +12,117 @@ namespace WindowsFormsApplication1.Control
 {
     class CCalculaSimilaridade
     {
-
-
-        private Hashtable calculaSimilaridadeLocal(Caso casoBase,List<Caso> allCasos)
+        public List<Caso> calculaSimilaridadeLocal(Caso casoBase)
         {
-            List<Caso> casos = allCasos;
+            DaoCaso dao_caso = new DaoCaso();
 
+            List<Caso> allCasos = dao_caso.getAll();
 
-            Hashtable sl = new Hashtable();
+            //Hashtable sl = new Hashtable();
 
             PropertyInfo[] valCaso = casoBase.GetType().GetProperties();
 
-            foreach (Caso c in casos)
+            DaoAtributo at = new DaoAtributo();
+
+            Atributo atb2 = new Atributo();
+
+            Hashtable pesos = getPesos();
+
+            List<Atributo> atbs = at.getAll();
+
+            List<Caso> casoSimilar = new List<Caso>();
+
+            double similaridadeLocal = 0;
+            double similaridadeGlobal = 0;
+            double div = 0;
+
+            for (int j=0;j< allCasos.Count;j++)
             {
                 Hashtable similaridades = new Hashtable();
-                PropertyInfo[] valTab = c.GetType().GetProperties();
+                PropertyInfo[] valTab = allCasos[j].GetType().GetProperties();
+
+                similaridadeLocal = 0;
+                div = 0;
 
                 for (int i = 3; i <= 37; i++)
                 {
-                    DaoAtributo at = new DaoAtributo();
 
-                    Atributo atb = new Atributo();
-                    atb.atributo = valTab[i].Name;
+                    //atb.atributo = valTab[i].Name;
 
-                    Atributo atb2 = at.searchOther(atb);
+                    //Atributo atb2 = at.searchOther(atb);
 
-                    double similaridadeLocal;
+                    atb2 = atbs.Find(a => a.atributo.Equals(valTab[i].Name.Replace('_','-')));
 
-                    if (atb2.similaridade.Equals("Não") || valCaso[i].GetValue(casoBase).Equals("Desconhecido") || valTab[i].GetValue(c).Equals("Desconhecido"))
+                    
+
+                    if (valCaso[i].GetValue(casoBase).Equals("Desconhecido") || valTab[i].GetValue(allCasos[j]).Equals("Desconhecido"))
                     {
-                           similaridadeLocal = 0;
-                           similaridades.Add(valCaso[i].Name, similaridadeLocal);
+                           similaridadeLocal += 0;
+                           
+                           //similaridades.Add(valCaso[i].Name, similaridadeLocal);
                     }
-                    else if (valTab[i].GetValue(c).Equals("Yes") || valTab[i].GetValue(c).Equals("No"))
+                    else if (valCaso[i].GetValue(casoBase).Equals("Desconhecido") && valTab[i].GetValue(allCasos[j]).Equals("Desconhecido"))
                     {
-                        var t = valCaso[i].GetValue(casoBase);
-
-                        if (t.Equals(valTab[i].GetValue(c)))
+                        similaridadeLocal += (1* Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString()));
+                        div += Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString());
+                        //similaridades.Add(valCaso[i].Name, similaridadeLocal);
+                    }
+                    else if (atb2.similaridade.Equals("Não"))
+                    {
+                        if (valCaso[i].Name.Equals(valTab[i].Name))
                         {
-                            similaridadeLocal = 1;
-                            similaridades.Add(valCaso[i].Name, similaridadeLocal);
-                        }
+                            similaridadeLocal += (1* Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString()));
+                            div += Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString());
+                        }                  
 
-                        else
-                        {
-                            similaridadeLocal = 0;
-                            similaridades.Add(valCaso[i].Name, similaridadeLocal);
-                        }
-                            
+                        similaridadeLocal += 0;
+
+                        //similaridades.Add(valCaso[i].Name, similaridadeLocal);
 
                     }
                     else {
 
-                        double[] maxMin = maxMinCol(casos, valTab[i]);
                         var atbVal = valCaso[i].GetValue(casoBase);
-                        var atbTabela = valTab[i].GetValue(c);
-                        similaridadeLocal = 1 - ((Math.Abs(valAtributo(valCaso[i].Name, (String)atbVal) - valAtributo(valTab[i].Name, (String)atbTabela)))) / (maxMin[1] - maxMin[0]);
-                        similaridades.Add(valCaso[i].Name, similaridadeLocal);
+                        var atbTabela = valTab[i].GetValue(allCasos[j]);
+
+                        double valorCaso = valAtributo(valCaso[i].Name, (String)atbVal);
+                        double valorTab = valAtributo(valTab[i].Name, (String)atbTabela);
+
+                        double[] maxMin = maxMinCol(allCasos, valTab[i], valorCaso, valorTab);
+
+                       if(maxMin[0] != maxMin[1])
+                        {
+                             similaridadeLocal += (1 - ((Math.Abs(valorCaso - valorTab))) / (maxMin[1] - maxMin[0])* Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString()));
+                            div += Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString());
+                        }
+
+                        else
+                        {
+                            similaridadeLocal += (1 - (Math.Abs(valorCaso - valorTab))* Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString()));
+                            div += Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString());
+                        }
+                         
+
+                        //similaridades.Add(valCaso[i].Name, similaridadeLocal);
                     }
 
                 }
 
-                sl.Add(c.caso, similaridades);
+                //sl.Add(allCasos[j].caso, similaridades);
+
+                //similaridadeGlobal = similaridadeLocal / div;
+
+                Caso c = allCasos[j];
+                c.SimilaridadeGlobal = similaridadeGlobal;
+
+                casoSimilar.Add(c);
+
 
             }
 
-            return sl;
+            return casoSimilar;
         }
-        public List<Caso> CCalculaSimilaridadeGeral(Caso casoBase)
+        /*public List<Caso> CCalculaSimilaridadeGeral(Caso casoBase)
         {
             DaoPeso pesoDao = new DaoPeso();
 
@@ -113,21 +156,24 @@ namespace WindowsFormsApplication1.Control
 
                 for(int i=3;i <= 37; i++)
                 {
-                    c.SimilaridadeGlobal += (Convert.ToDouble(t[valAtb[i].Name].ToString())) * (Convert.ToDouble(pesos[valAtb[i].Name.Replace('_','-')].ToString()));
-                    c.SimilaridadeGlobal = c.SimilaridadeGlobal / div;
+                    if((double)(t[valAtb[i].Name]) != 0)
+                        c.SimilaridadeGlobal += (Convert.ToDouble(t[valAtb[i].Name])) * (Convert.ToDouble(pesos[valAtb[i].Name.Replace('_', '-')].ToString()));
+                   
                 }
+                double soma = c.SimilaridadeGlobal/ div;
+                c.SimilaridadeGlobal = c.SimilaridadeGlobal / div;
 
                 casosSimilares.Add(c);
                
             }
 
-            List<Caso> melhores = selecionaMelhores(casosSimilares);
+            //List<Caso> melhores = selecionaMelhores(casosSimilares);
 
-            return melhores;
+            return  casosSimilares;
 
 
 
-        }
+        }*/
         private double valAtributo(String atrib, String val)
         {
             DaoAtributo at = new DaoAtributo();
@@ -136,19 +182,19 @@ namespace WindowsFormsApplication1.Control
             atb.atributo = atrib;
 
             Atributo atb2 = at.searchOther(atb);
-                int valor = 0;
+                double valor = 0;
 
                 int i = atb2.valor2.IndexOf(val);
 
             if (i > 0)
-                valor = Convert.ToInt32(atb2.valor1[i]);
+                valor = Convert.ToDouble(atb2.valor1[i]);
             else
                 return 0;
 
                 return valor;
             
         }
-        private double[] maxMinCol(List<Caso> casos, PropertyInfo atbTab)
+        private double[] maxMinCol(List<Caso> casos, PropertyInfo atbTab, double valorCaso, double valorTab)
         {
             Hashtable table = new Hashtable();
 
@@ -157,18 +203,24 @@ namespace WindowsFormsApplication1.Control
 
                  
                 List<double> valores = new List<double>();
+                valores.Add(valorCaso);
+                valores.Add(valorTab);
 
-                foreach (Caso c in casos)
+                PropertyInfo[] prop;
+             
+
+                for (int i=0;i<casos.Count;i++)
                 {
-                    PropertyInfo[] prop = c.GetType().GetProperties();
+                     prop = casos[i].GetType().GetProperties();
 
-                    foreach (PropertyInfo p in prop)
+                    for(int j=0;j< prop.Length;j++)
                     {
-                        if (p.Name.Equals(atbTab.Name))
-                        {
-                            var v = p.GetValue(c, null);
 
-                            valores.Add(valAtributo(p.Name, (String)v));
+                        if (prop[j].Name.Equals(atbTab.Name))
+                        {
+                            var v = prop[j].GetValue(casos[i], null);
+
+                            valores.Add(valAtributo(prop[j].Name, (String)v));
                         }
                     }
 
@@ -190,11 +242,11 @@ namespace WindowsFormsApplication1.Control
 
             DaoPeso peso_dao = new DaoPeso();
 
-            List<Peso> peso = peso_dao.getAll();
+            List<Peso> pesos = peso_dao.getAll();
 
-            foreach(Peso p in peso)
+            for(int i=0;i<pesos.Count;i++)
             {
-                table.Add(p.atributo, p.peso);
+                table.Add(pesos[i].atributo, pesos[i].peso);
             }
 
             return table;
@@ -202,7 +254,7 @@ namespace WindowsFormsApplication1.Control
         }
 
 
-        private List<Caso> selecionaMelhores(List<Caso> casos)
+        public List<Caso> selecionaMelhores(List<Caso> casos)
         {
             List<Caso> caso = new List<Caso>();
             foreach(Caso c in casos)
