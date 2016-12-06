@@ -35,6 +35,7 @@ namespace SojaApp.DAO
         {
             try
             {
+            
                 coll.Insert(t);
 
                 return true;
@@ -122,7 +123,7 @@ namespace SojaApp.DAO
 
             try
             {
-               String at = t.atributo.Replace("_","-");
+                String at = t.atributo.Replace("_","-");
                 var q = Query.EQ("atributo", at);
                 MongoCursor<Atributo> result = coll.Find(q);
 

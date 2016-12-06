@@ -23,17 +23,16 @@ namespace SojaApp.DAO
             server = cliente.GetServer();
 
             database = server.GetDatabase("sojaBD");
-        
-            //coll = database.GetCollection("casos");
 
-           coll = database.GetCollection<Caso>("casos");
+
+            coll = database.GetCollection<Caso>("casos");
         }
-
-
+       
         public bool create(Caso t)
         {
             try
             {
+
                 coll.Insert(t);
 
                 return true;
@@ -53,6 +52,7 @@ namespace SojaApp.DAO
         {
             try
             {
+                ;
                 var q = Query.EQ("_id", t._id);
                 coll.Remove(q);
                 return true;
@@ -72,6 +72,7 @@ namespace SojaApp.DAO
         {
             try
             {
+              
                 var q = Query.EQ("caso", t.caso);
                 var result = coll.FindOne(q);
 
@@ -94,6 +95,7 @@ namespace SojaApp.DAO
         {
             try
             {
+            
                 MongoCursor<Caso> result = coll.FindAll();
 
                 List<Caso> lCaso = new List<Caso>();
@@ -118,6 +120,7 @@ namespace SojaApp.DAO
         }
         public int numDocumentos()
         {
+           
             return (int) coll.Count();
         }
     }

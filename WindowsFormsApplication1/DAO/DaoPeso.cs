@@ -30,11 +30,11 @@ namespace SojaApp.DAO
             coll = database.GetCollection<Peso>("pesos");
         }
 
-
         public bool create(Peso t)
         {
             try
             {
+
                 coll.Insert(t);
 
                 return true;

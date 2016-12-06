@@ -48,6 +48,8 @@ namespace TelasIA
 
             //Atributo.Text = valAtb[1].ToString();
             //Valor.Text = caso.area_damaged;
+
+            
         }
 
         private void btn_avançar_Click(object sender, EventArgs e)

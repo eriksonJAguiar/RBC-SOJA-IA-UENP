@@ -5,8 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace WindowsFormsApplication1.Control
 {
@@ -90,9 +89,12 @@ namespace WindowsFormsApplication1.Control
 
                         double[] maxMin = maxMinCol(allCasos, valTab[i], valorCaso, valorTab);
 
+                        /*maxMin[0] = 1;
+                        maxMin[1] = 3;*/
+
                        if(maxMin[0] != maxMin[1])
                         {
-                             similaridadeLocal += (1 - ((Math.Abs(valorCaso - valorTab))) / (maxMin[1] - maxMin[0])* Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString()));
+                            similaridadeLocal += (1 - ((Math.Abs(valorCaso - valorTab))) / (maxMin[1] - maxMin[0])* Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString()));
                             div += Convert.ToDouble(pesos[valTab[i].Name.Replace('_', '-')].ToString());
                         }
 
@@ -110,7 +112,7 @@ namespace WindowsFormsApplication1.Control
 
                 //sl.Add(allCasos[j].caso, similaridades);
 
-                //similaridadeGlobal = similaridadeLocal / div;
+                similaridadeGlobal = similaridadeLocal / div;
 
                 Caso c = allCasos[j];
                 c.SimilaridadeGlobal = similaridadeGlobal;
@@ -119,6 +121,8 @@ namespace WindowsFormsApplication1.Control
 
 
             }
+
+            System.GC.Collect();     
 
             return casoSimilar;
         }
@@ -188,17 +192,14 @@ namespace WindowsFormsApplication1.Control
 
             if (i > 0)
                 valor = Convert.ToDouble(atb2.valor1[i]);
-            else
-                return 0;
+     
 
                 return valor;
             
         }
         private double[] maxMinCol(List<Caso> casos, PropertyInfo atbTab, double valorCaso, double valorTab)
         {
-            Hashtable table = new Hashtable();
-
-
+          
             PropertyInfo[] nomeAtribs = casos[0].GetType().GetProperties();
 
                  
@@ -218,7 +219,7 @@ namespace WindowsFormsApplication1.Control
 
                         if (prop[j].Name.Equals(atbTab.Name))
                         {
-                            var v = prop[j].GetValue(casos[i], null);
+                            var v = prop[j].GetValue(casos[i]);
 
                             valores.Add(valAtributo(prop[j].Name, (String)v));
                         }
