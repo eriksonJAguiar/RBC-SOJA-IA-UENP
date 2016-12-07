@@ -226,7 +226,45 @@ namespace TelasIA
 
             CasoNovo casoSel = CasoNovo.getInstance();
 
-            casoSel = (CasoNovo) novoCaso;
+            casoSel._id = novoCaso._id;
+            casoSel.area_damaged = novoCaso.area_damaged;
+            casoSel.canker_lesion = novoCaso.canker_lesion;
+            casoSel.caso = novoCaso.caso;
+            casoSel.crop_hist = novoCaso.crop_hist;
+            casoSel.date = novoCaso.date;
+            casoSel.doenca = novoCaso.doenca;
+            casoSel.external_decay = novoCaso.external_decay;
+            casoSel.fruiting_bodies = novoCaso.fruiting_bodies;
+            casoSel.fruit_pods = novoCaso.fruit_pods;
+            casoSel.fruit_spots = novoCaso.fruit_spots;
+            casoSel.germination = novoCaso.germination;
+            casoSel.hail = novoCaso.hail;
+            casoSel.int_discolor = novoCaso.int_discolor;
+            casoSel.leafspots_halo = novoCaso.leafspots_halo;
+            casoSel.leafspots_marg = novoCaso.leafspots_marg;
+            casoSel.leafspot_size = novoCaso.leafspot_size;
+            casoSel.leaf_malf = novoCaso.leaf_malf;
+            casoSel.leaf_mild = novoCaso.leaf_mild;
+            casoSel.leaf_shread = novoCaso.leaf_shread;
+            casoSel.leaves = novoCaso.leaves;
+            casoSel.lodging = novoCaso.lodging;
+            casoSel.mold_growth = novoCaso.mold_growth;
+            casoSel.mycelium = novoCaso.mycelium;
+            casoSel.plant_growth = novoCaso.plant_growth;
+            casoSel.plant_stand = novoCaso.plant_stand;
+            casoSel.precip = novoCaso.precip;
+            casoSel.roots = novoCaso.precip;
+            casoSel.roots = novoCaso.roots;
+            casoSel.sclerotia = novoCaso.sclerotia;
+            casoSel.seed = novoCaso.seed;
+            casoSel.seed_discolor = novoCaso.seed_discolor;
+            casoSel.seed_size = novoCaso.seed_size;
+            casoSel.seed_tmt = novoCaso.seed_tmt;
+            casoSel.severity = novoCaso.severity;
+            casoSel.shriveling = novoCaso.shriveling;
+            casoSel.stem = novoCaso.stem;
+            casoSel.stem_cankers = novoCaso.stem_cankers;
+            casoSel.temp = casoSel.temp;
 
             this.Hide();
             TelaFinal final = new TelaFinal();

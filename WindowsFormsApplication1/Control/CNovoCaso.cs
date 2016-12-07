@@ -1,4 +1,5 @@
-﻿using SojaApp.Model;
+﻿using SojaApp.DAO;
+using SojaApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,13 @@ namespace WindowsFormsApplication1.Control
     {
         public void gravaNovoCaso(Caso caso)
         {
+            DaoCaso dao = new DaoCaso();
 
+            int num = dao.numDocumentos();
+
+            caso.caso = num;
+
+            dao.create(caso);
         }
     }
 }

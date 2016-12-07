@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1.view
 
 
             List<String> crop_hist = (List<String>)table["crop-hist"];
-            Crop_Hist.Items.AddRange(canker_lesion.ToArray());
+            Crop_Hist.Items.AddRange(crop_hist.ToArray());
 
             List<String> external_decay = (List<String>)table["external-decay"];
             External_Decay.Items.AddRange(external_decay.ToArray());
@@ -118,7 +118,7 @@ namespace WindowsFormsApplication1.view
             Seed_Discolor.Items.AddRange(seed_discolor.ToArray());
 
             List<String> seed_size = (List<String>)table["seed-size"];
-            Seed_Size.Items.AddRange(seed_discolor.ToArray());
+            Seed_Size.Items.AddRange(seed_size.ToArray());
 
             List<String> seed_tmt = (List<String>)table["seed-tmt"];
             Seed_Tmt.Items.AddRange(seed_tmt.ToArray());
