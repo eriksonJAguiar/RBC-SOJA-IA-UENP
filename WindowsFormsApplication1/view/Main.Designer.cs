@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnNovaConsulta = new System.Windows.Forms.Button();
-            this.btnSobre = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -46,20 +45,10 @@
             this.btnNovaConsulta.UseVisualStyleBackColor = true;
             this.btnNovaConsulta.Click += new System.EventHandler(this.btnNovaConsulta_Click);
             // 
-            // btnSobre
-            // 
-            this.btnSobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSobre.Location = new System.Drawing.Point(52, 360);
-            this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(236, 36);
-            this.btnSobre.TabIndex = 1;
-            this.btnSobre.Text = "Sobre";
-            this.btnSobre.UseVisualStyleBackColor = true;
-            // 
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(52, 424);
+            this.btnSair.Location = new System.Drawing.Point(52, 355);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(236, 37);
             this.btnSair.TabIndex = 2;
@@ -80,10 +69,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 491);
+            this.ClientSize = new System.Drawing.Size(337, 416);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnSobre);
             this.Controls.Add(this.btnNovaConsulta);
             this.Name = "Main";
             this.Text = "Consulta Soja";
@@ -96,7 +84,6 @@
 
         private System.Windows.Forms.Button btnNovaConsulta;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnSobre;
         public System.Windows.Forms.PictureBox pictureBox1;
     }
 }

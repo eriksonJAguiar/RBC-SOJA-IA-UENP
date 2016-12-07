@@ -70,22 +70,16 @@
     <Compile Include="Control\CClassificaAtributos.cs" />
     <Compile Include="Control\CGetAtrib.cs" />
     <Compile Include="Control\CGetCaso.cs" />
-    <Compile Include="Control\Cmain.cs" />
+    <Compile Include="Control\CNovoCaso.cs" />
     <Compile Include="Control\CTrasformarNum.cs" />
-    <Compile Include="DAO\CNovoCaso.cs" />
     <Compile Include="DAO\DaoAtributo.cs" />
     <Compile Include="DAO\DaoCaso.cs" />
     <Compile Include="DAO\DaoDoenca.cs" />
     <Compile Include="DAO\DaoPeso.cs" />
     <Compile Include="DAO\GenericDao.cs" />
+    <Compile Include="Model\CasoNovo.cs" />
     <Compile Include="Model\CasoNum.cs" />
     <Compile Include="Model\CasoSingleton.cs" />
-    <Compile Include="view\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\Form1.designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="view\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,9 +110,6 @@
     <Compile Include="view\TelaFinal.designer.cs">
       <DependentUpon>TelaFinal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="view\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
