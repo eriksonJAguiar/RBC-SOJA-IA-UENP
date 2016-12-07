@@ -121,8 +121,7 @@ namespace WindowsFormsApplication1.Control
 
 
             }
-
-            System.GC.Collect();     
+  
 
             return casoSimilar;
         }
@@ -192,9 +191,10 @@ namespace WindowsFormsApplication1.Control
 
             if (i > 0)
                 valor = Convert.ToDouble(atb2.valor1[i]);
-     
 
-                return valor;
+            //double valor = at.valNumerico(atrib,val);
+
+            return valor;
             
         }
         private double[] maxMinCol(List<Caso> casos, PropertyInfo atbTab, double valorCaso, double valorTab)
@@ -265,6 +265,8 @@ namespace WindowsFormsApplication1.Control
                     caso.Add(c);
                 }
             }
+
+            caso.OrderBy(c => c.SimilaridadeGlobal);
 
             return caso;
         }

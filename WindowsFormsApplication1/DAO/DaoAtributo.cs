@@ -164,5 +164,26 @@ namespace SojaApp.DAO
             }
 
         }
+        /*public int valNumerico(String atributo, String valor)
+        {
+            try
+            {
+                
+                BsonValue bvalue = database.Eval("valNumerico");
+                BsonValue bvalue2 = database.Eval(bvalue.AsBsonJavaScript.Code, atributo, valor);
+
+                return 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                server.Disconnect();
+            }
+
+            return 0;
+        }*/
     }
 }

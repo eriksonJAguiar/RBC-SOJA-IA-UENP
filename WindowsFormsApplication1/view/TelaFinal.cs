@@ -21,6 +21,14 @@ namespace TelasIA
             InitializeComponent();
         }
 
+        private void TelaFinal_Load(object sender, EventArgs e)
+        {
+            CasoNovo casoN = CasoNovo.getInstance();
+            CasoSingleton caso = CasoSingleton.getInstance();
+
+            doenca_textbox.Text = caso.doenca;
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -30,12 +38,22 @@ namespace TelasIA
         {
             CNovoCaso controller = new CNovoCaso();
 
-            controller.gravaNovoCaso(CasoSingleton.getInstance());
+            CasoNovo casoN = CasoNovo.getInstance();
+            CasoSingleton caso = CasoSingleton.getInstance();
+
+            controller.gravaNovoCaso(caso);
+
+            casoN.limpa();
+            caso.limpa();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            CNovoCaso controller = new CNovoCaso();
 
+            controller.gravaNovoCaso(CasoSingleton.getInstance());
+
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,6 +63,7 @@ namespace TelasIA
 
 
         }
-        
+
+       
     }
 }

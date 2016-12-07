@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.doenca_textbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -101,13 +101,13 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Doença";
             // 
-            // textBox1
+            // doenca_textbox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(299, 370);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(102, 26);
-            this.textBox1.TabIndex = 7;
+            this.doenca_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doenca_textbox.Location = new System.Drawing.Point(299, 370);
+            this.doenca_textbox.Name = "doenca_textbox";
+            this.doenca_textbox.Size = new System.Drawing.Size(102, 26);
+            this.doenca_textbox.TabIndex = 7;
             // 
             // button1
             // 
@@ -150,7 +150,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.doenca_textbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -161,6 +161,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TelaFinal";
             this.Text = "TelaFinal";
+            this.Load += new System.EventHandler(this.TelaFinal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +176,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox doenca_textbox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

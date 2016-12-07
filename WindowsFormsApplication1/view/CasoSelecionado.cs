@@ -24,12 +24,168 @@ namespace TelasIA
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        { 
+        {
+            System.GC.Collect();
+
             CCalculaSimilaridade c = new CCalculaSimilaridade();
 
             CasoSingleton caso = CasoSingleton.getInstance();
 
             List<Caso> casos_calculados = c.calculaSimilaridadeLocal(caso);
+
+
+            ListViewItem lvi = new ListViewItem("area_damaged");
+            lvi.SubItems.Add(caso.area_damaged);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("canker_lesion");
+            lvi.SubItems.Add(caso.canker_lesion);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("crop_hist");
+            lvi.SubItems.Add(caso.crop_hist);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("date");
+            lvi.SubItems.Add(caso.date);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("external_decay");
+            lvi.SubItems.Add(caso.external_decay);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("fruiting_bodies");
+            lvi.SubItems.Add(caso.fruiting_bodies);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("fruit_pods");
+            lvi.SubItems.Add(caso.fruit_pods);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("fruit_spots");
+            lvi.SubItems.Add(caso.fruit_spots);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("germination");
+            lvi.SubItems.Add(caso.germination);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("hail");
+            lvi.SubItems.Add(caso.hail);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("int_discolor");
+            lvi.SubItems.Add(caso.int_discolor);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("leafspots_halo");
+            lvi.SubItems.Add(caso.leafspots_halo);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("leafspots_marg");
+            lvi.SubItems.Add(caso.leafspots_marg);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("leafspot_size");
+            lvi.SubItems.Add(caso.leafspot_size);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("leaf_malf");
+            lvi.SubItems.Add(caso.leaf_malf);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("leaf_mild");
+            lvi.SubItems.Add(caso.leaf_mild);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("leaf_shread");
+            lvi.SubItems.Add(caso.leaf_shread);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("leaves");
+            lvi.SubItems.Add(caso.leaves);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("lodging");
+            lvi.SubItems.Add(caso.lodging);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("mold_growth");
+            lvi.SubItems.Add(caso.mold_growth);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("mycelium");
+            lvi.SubItems.Add(caso.mycelium);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("plant_growth");
+            lvi.SubItems.Add(caso.plant_growth);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("plant_stand");
+            lvi.SubItems.Add(caso.plant_stand);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("precip");
+            lvi.SubItems.Add(caso.precip);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("roots");
+            lvi.SubItems.Add(caso.roots);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("sclerotia");
+            lvi.SubItems.Add(caso.sclerotia);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("seed");
+            lvi.SubItems.Add(caso.seed);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("seed_discolor");
+            lvi.SubItems.Add(caso.seed_discolor);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("seed_size");
+            lvi.SubItems.Add(caso.seed_size);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("seed_tmt");
+            lvi.SubItems.Add(caso.seed_tmt);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("severity");
+            lvi.SubItems.Add(caso.severity);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("shriveling");
+            lvi.SubItems.Add(caso.shriveling);
+            listCasoInserido.Items.Add(lvi);
+
+
+            lvi = new ListViewItem("stem");
+            lvi.SubItems.Add(caso.stem);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("stem_cankers");
+            lvi.SubItems.Add(caso.stem_cankers);
+            listCasoInserido.Items.Add(lvi);
+
+            lvi = new ListViewItem("temp");
+            lvi.SubItems.Add(caso.temp);
+            listCasoInserido.Items.Add(lvi);
+
 
             //PropertyInfo[] valAtb = caso.GetType().GetProperties();
 
@@ -49,11 +205,29 @@ namespace TelasIA
             //Atributo.Text = valAtb[1].ToString();
             //Valor.Text = caso.area_damaged;
 
-            
+
+            List<Caso> casos = c.selecionaMelhores(casos_calculados);
+
+            for(int i=0;i<casos.Count;i++)
+            {
+                GridViewCasoscomSimilaridade.Rows.Add(casos[i].caso, casos[i].doenca,casos[i].SimilaridadeGlobal); 
+            }
         }
 
         private void btn_avançar_Click(object sender, EventArgs e)
         {
+            DaoCaso dao = new DaoCaso();
+
+            Caso novoCaso = new Caso();
+
+            novoCaso.caso = Convert.ToInt32(GridViewCasoscomSimilaridade.SelectedCells[0].Value.ToString());
+
+            novoCaso = dao.search(novoCaso);
+
+            CasoNovo casoSel = CasoNovo.getInstance();
+
+            casoSel = (CasoNovo) novoCaso;
+
             this.Hide();
             TelaFinal final = new TelaFinal();
             final.Show();

@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1.Model
 {
-    class CasoSingleton:Caso
+    class CasoNovo:Caso
     {
-        private static CasoSingleton singleton = null;
+        private static CasoNovo singleton = null;
 
-        private CasoSingleton() { }
+        private CasoNovo() { }
 
-        public static CasoSingleton getInstance()
+        public static CasoNovo getInstance()
         {
-            if(singleton == null)
+            if (singleton == null)
             {
-                singleton = new CasoSingleton();
+                singleton = new CasoNovo();
 
                 return singleton;
             }

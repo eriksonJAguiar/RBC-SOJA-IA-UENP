@@ -35,13 +35,13 @@
             this.Atributo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GridViewCasoscomSimilaridade = new System.Windows.Forms.DataGridView();
+            this.btn_Voltar = new System.Windows.Forms.Button();
+            this.btn_fechar = new System.Windows.Forms.Button();
+            this.btn_avançar = new System.Windows.Forms.Button();
             this.Caso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doenca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.similaridade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Selecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btn_Voltar = new System.Windows.Forms.Button();
-            this.btn_fechar = new System.Windows.Forms.Button();
-            this.btn_avançar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCasoscomSimilaridade)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,11 +58,21 @@
             this.listCasoInserido.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
             listViewGroup1,
             listViewGroup2});
-            this.listCasoInserido.Location = new System.Drawing.Point(13, 13);
+            this.listCasoInserido.Location = new System.Drawing.Point(12, 13);
             this.listCasoInserido.Name = "listCasoInserido";
-            this.listCasoInserido.Size = new System.Drawing.Size(676, 232);
+            this.listCasoInserido.Size = new System.Drawing.Size(677, 232);
             this.listCasoInserido.TabIndex = 0;
             this.listCasoInserido.UseCompatibleStateImageBehavior = false;
+            this.listCasoInserido.View = System.Windows.Forms.View.Details;
+            // 
+            // Atributo
+            // 
+            this.Atributo.Text = "Atributo";
+            this.Atributo.Width = 377;
+            // 
+            // Valor
+            // 
+            this.Valor.Text = "Valor";
             // 
             // GridViewCasoscomSimilaridade
             // 
@@ -79,32 +89,6 @@
             this.GridViewCasoscomSimilaridade.ReadOnly = true;
             this.GridViewCasoscomSimilaridade.Size = new System.Drawing.Size(445, 150);
             this.GridViewCasoscomSimilaridade.TabIndex = 2;
-            // 
-            // Caso
-            // 
-            this.Caso.HeaderText = "Caso";
-            this.Caso.Name = "Caso";
-            this.Caso.ReadOnly = true;
-            // 
-            // doenca
-            // 
-            this.doenca.HeaderText = "Doenca";
-            this.doenca.Name = "doenca";
-            this.doenca.ReadOnly = true;
-            // 
-            // similaridade
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.similaridade.DefaultCellStyle = dataGridViewCellStyle1;
-            this.similaridade.HeaderText = "Similaridade";
-            this.similaridade.Name = "similaridade";
-            this.similaridade.ReadOnly = true;
-            // 
-            // Selecionar
-            // 
-            this.Selecionar.HeaderText = "Selecionar";
-            this.Selecionar.Name = "Selecionar";
-            this.Selecionar.ReadOnly = true;
             // 
             // btn_Voltar
             // 
@@ -138,6 +122,35 @@
             this.btn_avançar.Text = "Avançar";
             this.btn_avançar.UseVisualStyleBackColor = true;
             this.btn_avançar.Click += new System.EventHandler(this.btn_avançar_Click);
+            // 
+            // Caso
+            // 
+            this.Caso.HeaderText = "Caso";
+            this.Caso.Name = "Caso";
+            this.Caso.ReadOnly = true;
+            this.Caso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // doenca
+            // 
+            this.doenca.HeaderText = "Doenca";
+            this.doenca.Name = "doenca";
+            this.doenca.ReadOnly = true;
+            this.doenca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // similaridade
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.similaridade.DefaultCellStyle = dataGridViewCellStyle1;
+            this.similaridade.HeaderText = "Similaridade";
+            this.similaridade.Name = "similaridade";
+            this.similaridade.ReadOnly = true;
+            // 
+            // Selecionar
+            // 
+            this.Selecionar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Selecionar.HeaderText = "Selecionar";
+            this.Selecionar.Name = "Selecionar";
+            this.Selecionar.ReadOnly = true;
             // 
             // CasoSelecionado
             // 
