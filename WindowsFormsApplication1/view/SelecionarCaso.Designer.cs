@@ -61,6 +61,7 @@
             // 
             this.ClientSize = new System.Drawing.Size(758, 516);
             this.Name = "SelecionarCaso";
+            this.Load += new System.EventHandler(this.SelecionarCaso_Load);
             this.ResumeLayout(false);
 
         }

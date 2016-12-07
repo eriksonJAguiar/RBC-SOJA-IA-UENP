@@ -16,5 +16,10 @@ namespace WindowsFormsApplication1.view
         {
             InitializeComponent();
         }
+
+        private void SelecionarCaso_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

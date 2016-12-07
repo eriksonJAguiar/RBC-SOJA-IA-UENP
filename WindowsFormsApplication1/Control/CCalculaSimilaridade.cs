@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-
+using WindowsFormsApplication1.Model;
 
 namespace WindowsFormsApplication1.Control
 {
@@ -87,7 +87,7 @@ namespace WindowsFormsApplication1.Control
                         double valorCaso = valAtributo(valCaso[i].Name, (String)atbVal);
                         double valorTab = valAtributo(valTab[i].Name, (String)atbTabela);
 
-                        double[] maxMin = maxMinCol(allCasos, valTab[i], valorCaso, valorTab);
+                        double[] maxMin = maxMinCol(valCaso[i].Name);
 
                         /*maxMin[0] = 1;
                         maxMin[1] = 3;*/
@@ -197,35 +197,12 @@ namespace WindowsFormsApplication1.Control
             return valor;
             
         }
-        private double[] maxMinCol(List<Caso> casos, PropertyInfo atbTab, double valorCaso, double valorTab)
+        private double[] maxMinCol(String label)
         {
-          
-            PropertyInfo[] nomeAtribs = casos[0].GetType().GetProperties();
 
-                 
-                List<double> valores = new List<double>();
-                valores.Add(valorCaso);
-                valores.Add(valorTab);
+                MaxMinimos maxMin = MaxMinimos.getInstance();
 
-                PropertyInfo[] prop;
-             
-
-                for (int i=0;i<casos.Count;i++)
-                {
-                     prop = casos[i].GetType().GetProperties();
-
-                    for(int j=0;j< prop.Length;j++)
-                    {
-
-                        if (prop[j].Name.Equals(atbTab.Name))
-                        {
-                            var v = prop[j].GetValue(casos[i]);
-
-                            valores.Add(valAtributo(prop[j].Name, (String)v));
-                        }
-                    }
-
-                }
+                List<double> valores = (List<double>) maxMin.table[label];    
 
                 valores.Sort();
 

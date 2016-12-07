@@ -70,6 +70,7 @@
     <Compile Include="Control\CClassificaAtributos.cs" />
     <Compile Include="Control\CGetAtrib.cs" />
     <Compile Include="Control\CGetCaso.cs" />
+    <Compile Include="Control\CMaxMin.cs" />
     <Compile Include="Control\CNovoCaso.cs" />
     <Compile Include="Control\CTrasformarNum.cs" />
     <Compile Include="DAO\DaoAtributo.cs" />
@@ -80,6 +81,13 @@
     <Compile Include="Model\CasoNovo.cs" />
     <Compile Include="Model\CasoNum.cs" />
     <Compile Include="Model\CasoSingleton.cs" />
+    <Compile Include="Model\MaxMinimos.cs" />
+    <Compile Include="view\CasoSelecionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CasoSelecionado.designer.cs">
+      <DependentUpon>CasoSelecionado.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +118,9 @@
     <Compile Include="view\TelaFinal.designer.cs">
       <DependentUpon>TelaFinal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\CasoSelecionado.resx">
+      <DependentUpon>CasoSelecionado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
